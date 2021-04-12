@@ -24,7 +24,7 @@ public class RepositoryConfig {
     private final OrderMapRepository orderMapRepository = new OrderMapRepository();
 
     @Bean
-    public UserRepository userRepository () {
+    public UserRepository userRepository() {
         return userRepositoryFactory.createUserRepository();
     }
 

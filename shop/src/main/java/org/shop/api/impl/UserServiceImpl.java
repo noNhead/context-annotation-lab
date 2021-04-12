@@ -2,12 +2,17 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import org.aspectj.lang.annotation.AdviceName;
 import org.shop.api.UserService;
 import org.shop.data.User;
 import org.shop.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class UserServiceImpl implements UserService {
 
+    @Autowired
+    @Qualifier("userRepository")
     private UserRepository repository;
 
     /* (non-Javadoc)
