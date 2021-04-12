@@ -4,6 +4,7 @@ import org.shop.api.ProductService;
 
 import org.shop.common.Products;
 import org.shop.data.Product;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * The Product Initializer util class.
@@ -11,6 +12,7 @@ import org.shop.data.Product;
 public final class ProductInitializer {
     
     /** The product service. */
+    @Autowired
     private ProductService productService;
 
     /**

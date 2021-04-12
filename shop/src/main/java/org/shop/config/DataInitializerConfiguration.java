@@ -4,6 +4,7 @@ import org.shop.*;
 import org.shop.api.ProductService;
 import org.shop.api.UserService;
 import org.shop.api.impl.ProductServiceImpl;
+import org.shop.api.impl.UserServiceImpl;
 import org.shop.data.User;
 import org.shop.repository.ProductRepository;
 import org.shop.repository.map.ProductMapRepository;
@@ -18,8 +19,7 @@ import java.util.Map;
 @Configuration
 @EnableAspectJAutoProxy
 public class DataInitializerConfiguration {
-    @Autowired
-    UserService userService;
+    UserService userService = new UserServiceImpl();
 
     @Bean
     public SellerInitializer sellerInitializer(Map<Long, String> sellerNames) {

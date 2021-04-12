@@ -1,3 +1,4 @@
+/*
 package org.shop.logger;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -31,3 +32,4 @@ public class LoggersConf {
     }
 
 }
+*/

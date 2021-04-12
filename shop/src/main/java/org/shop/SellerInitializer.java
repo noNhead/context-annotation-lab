@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class SellerInitializer {
 
     /** The seller service. */
+    @Autowired
     private SellerService sellerService;
     
     /** The seller names. */
