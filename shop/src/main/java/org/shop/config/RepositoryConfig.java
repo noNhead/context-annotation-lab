@@ -22,9 +22,11 @@ public class RepositoryConfig {
     @Autowired
     private Environment env;
 
-    private final UserRepositoryFactory userRepositoryFactory = new UserRepositoryFactory();
+    @Autowired
+    private UserRepositoryFactory userRepositoryFactory;
 
-    private final OrderMapRepository orderMapRepository = new OrderMapRepository();
+    @Autowired
+    private OrderMapRepository orderMapRepository;
 
     @Bean
     public UserRepository userRepository() {

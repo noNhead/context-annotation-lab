@@ -19,7 +19,8 @@ import java.util.Map;
 @Configuration
 @EnableAspectJAutoProxy
 public class DataInitializerConfiguration {
-    UserService userService = new UserServiceImpl();
+    @Autowired
+    UserService userService;
 
     @Bean
     public SellerInitializer sellerInitializer(Map<Long, String> sellerNames) {

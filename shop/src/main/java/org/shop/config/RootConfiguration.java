@@ -9,7 +9,8 @@ import org.springframework.context.annotation.*;
 @Import({ApiConfiguration.class,
         DataInitializerConfiguration.class,
         FactoryConfiguration.class,
-        RepositoryConfig.class
+        RepositoryConfig.class,
+        CustomBeanFactory.class
 })
 @ComponentScan("org.shop")
 public class RootConfiguration {

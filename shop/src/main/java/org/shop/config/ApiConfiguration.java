@@ -20,10 +20,11 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @EnableAspectJAutoProxy
-@Import(RepositoryConfig.class)
 public class ApiConfiguration {
-    ProductRepository productRepository = new ProductMapRepository();
-    ProposalRepository proposalRepository = new ProposalMapRepository();
+    @Autowired
+    ProductRepository productRepository;
+    @Autowired
+    ProposalRepository proposalRepository;
 
     @Bean
     public UserService userService() {
