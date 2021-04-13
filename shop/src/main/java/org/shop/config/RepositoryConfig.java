@@ -17,7 +17,6 @@ import java.util.Objects;
 @Configuration
 @PropertySource("config.properties")
 @EnableAspectJAutoProxy
-@Import(FactoryConfiguration.class)
 public class RepositoryConfig {
     @Autowired
     private Environment env;
