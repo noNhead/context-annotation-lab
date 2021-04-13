@@ -10,7 +10,8 @@ import org.springframework.context.annotation.*;
         FactoryConfiguration.class,
         RepositoryConfig.class
 })
-@ComponentScan("org.shop")
+@ComponentScan("org.shop.logger")
+@ComponentScan("org.shop.config")
 public class RootConfiguration {
     /*@Bean
     public LoggerWithoutAspectJ loggerWithoutAspectJ() {

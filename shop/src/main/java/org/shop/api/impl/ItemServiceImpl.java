@@ -8,9 +8,8 @@ import org.shop.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ItemServiceImpl implements ItemService {
-    
+
     /** The item repository. */
-    @Autowired
     private final ItemRepository repository;
 
     /**

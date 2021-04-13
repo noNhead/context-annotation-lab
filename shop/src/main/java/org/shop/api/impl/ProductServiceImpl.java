@@ -8,7 +8,6 @@ import org.shop.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProductServiceImpl implements ProductService {
-    @Autowired
     private final ProductRepository repository;
 
 
