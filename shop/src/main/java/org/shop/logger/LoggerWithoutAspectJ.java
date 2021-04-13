@@ -1,20 +1,11 @@
 package org.shop.logger;
 
-import org.shop.DataInitializer;
-import org.shop.config.ApiConfiguration;
-import org.shop.config.DataInitializerConfiguration;
-import org.shop.config.RepositoryConfig;
-import org.shop.config.RootConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
-import java.util.HashMap;
-import java.util.Map;
 
 @Component
 public class LoggerWithoutAspectJ implements BeanPostProcessor {
