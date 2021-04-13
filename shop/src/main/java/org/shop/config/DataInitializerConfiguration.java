@@ -40,8 +40,8 @@ public class DataInitializerConfiguration {
     @Bean
     public ProductInitializer productInitializer() {
         ProductRepository repository = new ProductMapRepository();
-        ProductService productRepository = new ProductServiceImpl(repository);
-        return new ProductInitializer(productRepository);
+        ProductService productService = new ProductServiceImpl(repository);
+        return new ProductInitializer(productService);
     }
 
     @Bean
