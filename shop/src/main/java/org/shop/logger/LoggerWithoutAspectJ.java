@@ -1,5 +1,6 @@
 package org.shop.logger;
 
+import org.shop.DataInitializer;
 import org.shop.config.ApiConfiguration;
 import org.shop.config.DataInitializerConfiguration;
 import org.shop.config.RepositoryConfig;
@@ -18,32 +19,22 @@ import java.util.Map;
 @Component
 public class LoggerWithoutAspectJ implements BeanPostProcessor {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggerWithoutAspectJ.class);
-    private final Map<String,Class> classMap = new HashMap<>();
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName){
-        LOGGER.info("postProcessorBeforeInit start for: {}", beanName);
-        Class beanClass = bean.getClass();
-        classMap.put(beanName, beanClass);
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName){
-        LOGGER.info("postProcessorAfterInit start for: {}", beanName);
-        LOGGER.info("classMap size is: {}", classMap.size());
-        Class beanClass = classMap.get(beanName);
-        if(beanClass != null) {
+        if(beanName.equals("dataInitializer")) {
+            LOGGER.info("Entering PPAI with dataInitializer");
+            Class beanClass = bean.getClass();
             return Proxy.newProxyInstance(beanClass.getClassLoader(),
-                    beanClass.getInterfaces(), new InvocationHandler() {
-                @Override
-                public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                    LOGGER.info("Start {}", method);
-                    Object value = method.invoke(bean,args);
-                    LOGGER.info("End {}",method);
-                    return value;
-                }
-            });
+                    beanClass.getInterfaces(), (proxy, method, args) -> {
+                        LOGGER.info("Start {}", method);
+                        return method.invoke(bean,args);
+                    });
         }
         return bean;
     }

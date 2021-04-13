@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class DataInitializerConfiguration {
     @Bean
     public SellerInitializer sellerInitializer(Map<Long, String> sellerNames) {

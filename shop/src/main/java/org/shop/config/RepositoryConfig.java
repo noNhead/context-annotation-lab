@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Configuration
 @PropertySource("config.properties")
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class RepositoryConfig {
     private final Environment env;
 

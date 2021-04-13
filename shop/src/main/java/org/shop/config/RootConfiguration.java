@@ -4,7 +4,7 @@ package org.shop.config;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 @Import({ApiConfiguration.class,
         DataInitializerConfiguration.class,
         FactoryConfiguration.class,
@@ -13,8 +13,5 @@ import org.springframework.context.annotation.*;
 @ComponentScan("org.shop.logger")
 @ComponentScan("org.shop.config")
 public class RootConfiguration {
-    /*@Bean
-    public LoggerWithoutAspectJ loggerWithoutAspectJ() {
-        return new LoggerWithoutAspectJ();
-    }
-*/}
+
+}
