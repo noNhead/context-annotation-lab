@@ -13,8 +13,11 @@ import java.util.Objects;
 @PropertySource("config.properties")
 @EnableAspectJAutoProxy
 public class RepositoryConfig {
-    @Autowired
-    private Environment env;
+    private final Environment env;
+
+    public RepositoryConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public UserRepository userRepository(UserRepositoryFactory userRepositoryFactory) {
