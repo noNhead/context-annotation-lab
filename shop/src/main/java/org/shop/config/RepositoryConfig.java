@@ -8,11 +8,8 @@ import org.shop.repository.map.OrderMapRepository;
 import org.shop.repository.map.ProductMapRepository;
 import org.shop.repository.map.ProposalMapRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 import org.shop.repository.factory.UserRepositoryFactory;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 import java.util.Objects;
@@ -20,11 +17,13 @@ import java.util.Objects;
 @Configuration
 @PropertySource("config.properties")
 @EnableAspectJAutoProxy
+@Import(FactoryConfiguration.class)
 public class RepositoryConfig {
     @Autowired
     private Environment env;
 
     private final UserRepositoryFactory userRepositoryFactory = new UserRepositoryFactory();
+
     private final OrderMapRepository orderMapRepository = new OrderMapRepository();
 
     @Bean

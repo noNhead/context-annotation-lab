@@ -10,6 +10,8 @@ import org.shop.api.impl.SellerServiceImpl;
 import org.shop.api.impl.UserServiceImpl;
 import org.shop.repository.ProductRepository;
 import org.shop.repository.ProposalRepository;
+import org.shop.repository.map.ProductMapRepository;
+import org.shop.repository.map.ProposalMapRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,11 +22,8 @@ import org.springframework.context.annotation.Import;
 @EnableAspectJAutoProxy
 @Import(RepositoryConfig.class)
 public class ApiConfiguration {
-    @Autowired
-    ProductRepository productRepository;
-
-    @Autowired
-    ProposalRepository proposalRepository;
+    ProductRepository productRepository = new ProductMapRepository();
+    ProposalRepository proposalRepository = new ProposalMapRepository();
 
     @Bean
     public UserService userService() {
