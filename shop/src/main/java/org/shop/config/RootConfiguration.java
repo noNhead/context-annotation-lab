@@ -1,7 +1,6 @@
 package org.shop.config;
 
 //import org.shop.logger.LoggersConf;
-import org.shop.logger.LoggerWithoutAspectJ;
 import org.springframework.context.annotation.*;
 
 @Configuration
@@ -9,13 +8,12 @@ import org.springframework.context.annotation.*;
 @Import({ApiConfiguration.class,
         DataInitializerConfiguration.class,
         FactoryConfiguration.class,
-        RepositoryConfig.class,
-        CustomBeanFactory.class
+        RepositoryConfig.class
 })
 @ComponentScan("org.shop")
 public class RootConfiguration {
-    @Bean
+    /*@Bean
     public LoggerWithoutAspectJ loggerWithoutAspectJ() {
         return new LoggerWithoutAspectJ();
     }
-}
+*/}

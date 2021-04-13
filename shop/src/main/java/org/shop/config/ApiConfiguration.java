@@ -1,15 +1,11 @@
 package org.shop.config;
 
-import org.shop.api.ProductService;
-import org.shop.api.ProposalService;
-import org.shop.api.SellerService;
-import org.shop.api.UserService;
-import org.shop.api.impl.ProductServiceImpl;
-import org.shop.api.impl.ProposalServiceImpl;
-import org.shop.api.impl.SellerServiceImpl;
-import org.shop.api.impl.UserServiceImpl;
+import org.shop.api.*;
+import org.shop.api.impl.*;
+import org.shop.repository.ItemRepository;
 import org.shop.repository.ProductRepository;
 import org.shop.repository.ProposalRepository;
+import org.shop.repository.map.ItemMapRepository;
 import org.shop.repository.map.ProductMapRepository;
 import org.shop.repository.map.ProposalMapRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +17,24 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @EnableAspectJAutoProxy
 public class ApiConfiguration {
-    @Autowired
-    ProductRepository productRepository;
-    @Autowired
-    ProposalRepository proposalRepository;
+    @Bean
+    public ItemService itemService(ItemRepository itemRepository){
+        return new ItemServiceImpl(itemRepository);
+    }
 
     @Bean
-    public UserService userService() {
-        return new UserServiceImpl();
+    public OrderService orderService(){
+        return new OrderServiceImpl();
+    }
+
+    @Bean
+    public ProductService productService(ProductRepository productRepository) {
+        return new ProductServiceImpl(productRepository);
+    }
+
+    @Bean
+    public ProposalService proposalService(ProposalRepository proposalRepository) {
+        return new ProposalServiceImpl(proposalRepository);
     }
 
     @Bean
@@ -37,12 +43,7 @@ public class ApiConfiguration {
     }
 
     @Bean
-    public ProductService productService() {
-        return new ProductServiceImpl(productRepository);
-    }
-
-    @Bean
-    public ProposalService proposalService() {
-        return new ProposalServiceImpl(proposalRepository);
+    public UserService userService() {
+        return new UserServiceImpl();
     }
 }

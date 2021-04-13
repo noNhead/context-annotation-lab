@@ -1,3 +1,4 @@
+/*
 package org.shop.config;
 
 import org.shop.annotations.RandomInt;
@@ -32,3 +33,4 @@ public class InjectAverageInt implements BeanPostProcessor {
         return bean;
     }
 }
+*/

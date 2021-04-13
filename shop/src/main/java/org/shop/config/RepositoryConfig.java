@@ -1,12 +1,7 @@
 package org.shop.config;
 
-import org.shop.repository.OrderRepository;
-import org.shop.repository.ProductRepository;
-import org.shop.repository.ProposalRepository;
-import org.shop.repository.UserRepository;
-import org.shop.repository.map.OrderMapRepository;
-import org.shop.repository.map.ProductMapRepository;
-import org.shop.repository.map.ProposalMapRepository;
+import org.shop.repository.*;
+import org.shop.repository.map.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.shop.repository.factory.UserRepositoryFactory;
@@ -21,19 +16,13 @@ public class RepositoryConfig {
     @Autowired
     private Environment env;
 
-    @Autowired
-    private UserRepositoryFactory userRepositoryFactory;
-
-    @Autowired
-    private OrderMapRepository orderMapRepository;
-
     @Bean
-    public UserRepository userRepository() {
+    public UserRepository userRepository(UserRepositoryFactory userRepositoryFactory) {
         return userRepositoryFactory.createUserRepository();
     }
 
     @Bean
-    public OrderRepository orderRepository() {
+    public OrderRepository orderRepository(OrderMapRepository orderMapRepository) {
         long initialSequence = Long.parseLong(Objects.requireNonNull(env.getProperty("initialSequence")));
         orderMapRepository.setSequence(initialSequence);
         return orderMapRepository;
@@ -47,5 +36,15 @@ public class RepositoryConfig {
     @Bean
     public ProposalRepository proposalRepository() {
         return new ProposalMapRepository();
+    }
+
+    @Bean
+    public ItemRepository itemRepository(){
+        return new ItemMapRepository();
+    }
+
+    @Bean
+    public SellerRepository sellerRepository(){
+        return new SellerMapRepository();
     }
 }

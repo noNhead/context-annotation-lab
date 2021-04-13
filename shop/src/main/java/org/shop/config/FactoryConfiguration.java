@@ -11,10 +11,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @EnableAspectJAutoProxy
 public class FactoryConfiguration {
-    private static final Logger LOGGER = LoggerFactory.getLogger(FactoryConfiguration.class);
     @Bean
     public UserRepositoryFactory userRepositoryFactory() {
-        LOGGER.info("userRepositoryFactory start");
         return new UserRepositoryFactory();
     }
 
