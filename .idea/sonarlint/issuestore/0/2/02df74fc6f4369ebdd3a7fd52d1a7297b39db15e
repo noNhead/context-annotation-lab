@@ -1,0 +1,9 @@
+
+E
+java:S1128"/Remove this unused import 'org.shop.data.User'.(‰¦è
+D
+java:S2208".Explicitly import the specific classes needed.(ßµü
+O
+java:S2039"4Explicitly declare the visibility for "userService".(¨ƒ¼¢ùÿÿÿÿ
+q
+java:S3305"VInject this field value directly into "userInitializer", the only method that uses it.(¨ƒ¼¢ùÿÿÿÿ

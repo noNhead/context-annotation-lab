@@ -1,0 +1,21 @@
+
+L
+java:S3740#"/Provide the parametrized type for this generic.(™ú‘Æ8·®Æ½Œ/
+w
+java:S3749"ZAnnotate this member with "@Autowired", "@Resource", "@Inject", or "@Value", or remove it.(ÚµÇÕ8·®Æ½Œ/
+Z
+java:S1128"=Remove this unused import 'org.shop.config.ApiConfiguration'.(Œ©š8×¶ó½Œ/
+f
+java:S1128"IRemove this unused import 'org.shop.config.DataInitializerConfiguration'.(Ş¾Äú8›ƒÓ½Œ/
+L
+java:S3740"/Provide the parametrized type for this generic.(ÚµÇÕ8·®Æ½Œ/
+_
+java:S3032%"=Use "Thread.currentThread().getContextClassLoader()" instead.(…œ¦Óûÿÿÿÿ8·®Æ½Œ/
+`
+java:S1128">Remove this unused import 'org.shop.config.RootConfiguration'.(ÄôÇ½şÿÿÿÿ8·®Æ½Œ/
+_
+java:S1128"=Remove this unused import 'org.shop.config.RepositoryConfig'.(öñÏÅüÿÿÿÿ8®æ½Œ/
+L
+java:S3740"/Provide the parametrized type for this generic.(¤À…¯8·®Æ½Œ/
+à
+java:S4605"½'LoggerWithoutAspectJ' is not reachable by @ComponentsScan or @SpringBootApplication. Either move it to a package configured in @ComponentsScan or update your @ComponentsScan configuration.(Ëò© úÿÿÿÿ8·®Æ½Œ/

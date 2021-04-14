@@ -1,0 +1,9 @@
+
+S
+java:S1176"=Document this public class by adding an explicit description.(ş¥Ìš
+(	java:S923"Do not use varargs.(›âà
+?
+java:S2143")Use the Java 8 Date and Time API instead.(‡ù‡§
+-	java:S923("Do not use varargs.(¢ßÄ¨ûÿÿÿÿ
+t
+java:S2293)"YReplace the type specification in this constructor call with the diamond operator ("<>").(¿¦ãƒùÿÿÿÿ
